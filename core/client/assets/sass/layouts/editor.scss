@@ -132,6 +132,13 @@
             .entry-word-count {
                 float: right;
             }
+            #preview_toggle{
+              float:right;
+            }
+            #preview_displayer, #preview_hider{
+              font-weight: bold;
+              text-decoration:none;
+            }
 
         }
 

@@ -12,6 +12,10 @@
         <header class="floatingheader">
             <small>Markdown</small>
             <a class="markdown-help" href="#"><span class="hidden">What is Markdown?</span></a>
+            <div id="preview_toggle">
+              <a href="#" id="preview_displayer" onclick="$('.entry-preview')[0].style.display='';$('.entry-markdown')[0].style.width='50%';">&lt;</a>
+              <a href="#" id="preview_hider" onclick="$('.entry-preview')[0].style.display='none';$('.entry-markdown')[0].style.width='100%';">&gt;</a>
+            </div>
         </header>
         <section id="entry-markdown-content" class="entry-markdown-content" data-filestorage={{fileStorage}}>
             <textarea id="entry-markdown"></textarea>

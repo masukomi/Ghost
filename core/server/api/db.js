@@ -66,12 +66,14 @@ db = {
         }).then(function (version) {
             databaseVersion = version;
             // Read the file contents
+            console.log("about to read file contents")
             return nodefn.call(fs.readFile, options.importfile.path);
         }).then(function (fileContents) {
             var importData,
                 error = '',
                 tableKeys = _.keys(schema);
-
+            console.log("read file contents. keys:")
+            console.log(tableKeys)
             // Parse the json data
             try {
                 importData = JSON.parse(fileContents);

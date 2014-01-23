@@ -62,7 +62,9 @@
 
         events: {
             'click [data-set-status]': 'handleStatus',
-            'click .js-publish-button': 'handlePostButton'
+            'click .js-publish-button': 'handlePostButton',
+            'click #preview_hider': 'hidePreview',
+            'click #preview_displayer': 'showPreview'
         },
 
         statusMap: null,
@@ -147,6 +149,14 @@
             });
         },
 
+        hidePreview: function(){
+          $('.entry-preview')[0].style.display='none';
+          $('.entry-markdown')[0].style.width='100%';
+        },
+        showPreview: function(){
+          $('.entry-preview')[0].style.display='';
+          $('.entry-markdown')[0].style.width='50%';
+        },
         setActiveStatus: function (newStatus, displayText, currentStatus) {
             var isPublishing = (newStatus === 'published' && currentStatus !== 'published'),
                 isUnpublishing = (newStatus === 'draft' && currentStatus === 'published'),
